@@ -15,11 +15,19 @@ function App() {
     // console.log('clicked', dIsply_value);
     // dIsply_value = dIsply_value + 1
 
-    setCounter(dIsply_value + 1) 
+    if (dIsply_value < 20) {
+      setCounter(dIsply_value + 1)       // useing loop to set it from 0 - 20
+    }
+  
   }
 
+
   const removeVALUE = ()=> {
-    setCounter(dIsply_value - 1)
+
+    if (dIsply_value > 0) {
+      setCounter(dIsply_value - 1)      // useing loop to set it from 0 - 20
+    }
+  
   }
 
 
