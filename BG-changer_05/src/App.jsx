@@ -16,10 +16,10 @@ function App() {
         <button onClick={() => setColor('Yellow')} className='m-2 p-2 bg-yellow-500 text-white'>
           Yellow</button>
         <button onClick={() => setColor('blue')} className='m-2 p-2 bg-blue-500 text-white'>
-          Blue</button>
+          Blue </button>
       </div>
       <div className='fixed flex flex-wrap justify-center bottom-10 inset-x-0 px-2'>
-        Hello
+        Hello To check color 
       </div>
     </div>
   );

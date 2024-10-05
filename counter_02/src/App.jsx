@@ -35,7 +35,7 @@ function App() {
     <>
      
      <h1> React </h1>
-     <h2> Counter value {dIsply_value}</h2>
+     <h2> Check Counter value {dIsply_value}</h2>
      <button onClick={addVALUE}> Add Valu  {dIsply_value}</button>
      <br />
      <button onClick={removeVALUE}> Remove Value  {dIsply_value} </button>
