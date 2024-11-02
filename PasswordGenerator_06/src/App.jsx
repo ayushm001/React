@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import './App.css'
 
 function App() {
@@ -10,11 +10,28 @@ function App() {
   const passwordGenerator = useCallback(() => {
     let pass = ""
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+
+    if(numberAllowed) str += "0123456789"
+    if(charAllowed) str += "!@#$%^&*()"
+
+    for (let i = 1; i <= length; i++) {
+      let char = Math.floor(Math.random() * str.length + 1 )
+
+      pass += str.charAt(char)
+      
+    }
+
+    setPassword(pass)
+
   }, [length, numberAllowed, charAllowed, setPassword])
+
+  useEffect(()=>{
+    passwordGenerator( )
+  }, [length, numberAllowed, charAllowed, passwordGenerator])
 
   return (
     <>
-    <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8
+    <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-1 py-3 my-8
      bg-gray-800 text-orange-500'>
 
       <h1 className='text-white text-center my-10 '> Password Generator </h1>
@@ -22,7 +39,7 @@ function App() {
       <div className='flex shadow rounded-lg overflow-hidden mb-4'>
         <input 
           type="text"
-          // value{Password}
+          value = {password}
           className='outline-none w-full py-1 px-3'
           placeholder='password'
           readOnly
@@ -55,6 +72,7 @@ function App() {
           onChange={() => {setNumberAllowed( (prev) => !prev);
           }}
            />
+           <label htmlFor="charecter input"> Charecters </label>
         </div>
       </div>
 
