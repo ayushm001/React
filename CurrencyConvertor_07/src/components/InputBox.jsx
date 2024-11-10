@@ -3,7 +3,7 @@ import React, {useId} from 'react'
 function InputBox({
     label,
     amount,
-    onAmountChange,
+    onAmountChange,           
     onCurrencyChange,
     currencyOptions = [],
     selectCurrency = "usd",
